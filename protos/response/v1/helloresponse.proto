@@ -1,0 +1,8 @@
+syntax = "proto3";
+package protos.response.v1;
+option go_package = "github.com/kaito2/sampleproto/go-protos/response/v1;helloresponse";
+
+// A response message containing a greeting
+message HelloReply {
+    string message = 1;
+}

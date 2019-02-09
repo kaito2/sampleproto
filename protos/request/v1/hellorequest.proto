@@ -1,0 +1,10 @@
+syntax = "proto3";
+package protos.request.v1;
+option go_package = "github.com/kaito2/sampleproto/go-protos/request/v1;hellorequest";
+
+// The request message containing the user's name and how many greetings
+// they want.
+message HelloRequest {
+    string name = 1;
+    string num_greetings = 2;
+}

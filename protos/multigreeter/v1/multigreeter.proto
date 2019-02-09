@@ -1,0 +1,12 @@
+syntax = "proto3";
+package protos.multigreeter.v1;
+option go_package = "github.com/kaito2/sampleproto/go-protos/multigreeter/v1;multigreeter";
+
+import "protos/request/v1/hellorequest.proto";
+import "protos/response/v1/helloresponse.proto";
+
+// The greeting service definition.
+service MultiGreeter {
+    // Sends multiple greetings
+    rpc sayHello (protos.request.v1.HelloRequest) returns (stream protos.response.v1.HelloReply) {}
+}
