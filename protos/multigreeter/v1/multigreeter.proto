@@ -4,9 +4,12 @@ option go_package = "github.com/kaito2/sampleproto/go-protos/multigreeter/v1;mul
 
 import "protos/request/v1/hellorequest.proto";
 import "protos/response/v1/helloresponse.proto";
+import "google/api/annotations.proto";
 
 // The greeting service definition.
 service MultiGreeter {
     // Sends multiple greetings
-    rpc sayHello (protos.request.v1.HelloRequest) returns (stream protos.response.v1.HelloReply) {}
+    rpc sayHello (protos.request.v1.HelloRequest) returns (stream protos.response.v1.HelloReply) {
+        option (google.api.http) = { get: "/v1/multigreeter/{name}" };
+    }
 }
